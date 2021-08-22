@@ -1,8 +1,6 @@
 # Express-Typescript-Starter
 
-## Installation
-
-` npm install express-typescript-starter --save`
+<a href="https://github.com/ubeytdemirr/express-typescript-starter/generate">Click here or use template button to create new project </a>
 
 ## Install dependencies
 
@@ -44,7 +42,7 @@ AWS_SECRET_ACCESS_KEY=AWS_SECRET_ACCESS_KEY
 
 ## Set repository secrets
 
-Go to [settings/secrets/actions]() and create following secrets
+Go to <a href="/settings/secrets/actions">secrets</a> section and create following secrets
 
 ```
 
