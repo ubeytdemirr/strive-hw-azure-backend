@@ -42,7 +42,7 @@ AWS_SECRET_ACCESS_KEY=AWS_SECRET_ACCESS_KEY
 
 ## Set repository secrets
 
-Go to <a href="settings/secrets/actions">secrets</a> section and create following secrets
+Go to settins/secrets section and create following secrets
 
 ```
 
