@@ -14,5 +14,11 @@ echo "installing dependencies..."
 sudo npm install
 
 
+echo "testing app..."
+sudo npm run test
+
+echo "building app..."
+sudo npm install
+
 echo "starting app..."
 sudo pm2 start app.json

@@ -1,6 +1,52 @@
-# Express-Typescript-Starter
+# Express-Typescript-Starter
 
-# Secrets to trigger auto-deployment
+## Installation
+
+` npm install express-typescript-starter --save`
+
+## Install dependencies
+
+`npm install`
+
+## Add the environment variables
+
+- create env folder in root directory
+- create development.env and production.env files
+
+```
+#----------------------- APP ----------------------------#
+NODE_ENV=development
+
+PORT=5000
+
+FRONTEND_PRODUCTION=http://localhost:3000
+
+FRONTEND_DEV=http://localhost:3000
+
+#----------------------- AWS ----------------------------#
+
+AWS_ACCESS_KEY=AWS_ACCESS_KEY
+AWS_SECRET_ACCESS_KEY=AWS_SECRET_ACCESS_KEY
+
+```
+
+## Run the app in development mode
+
+`npm run dev`
+
+## Test the app`
+
+`npm run test`
+
+## Build the app for production
+
+`npm run build`
+
+## Set repository secrets
+
+Go to [settings/secrets/actions]() and create following secrets
+
+```
 
 - AWS_SG_NAME : AWS Security Group Name
 
@@ -19,3 +65,6 @@
 - SLACK_USERNAME : Slack Username to notify
 
 - SLACK_WEBHOOK : Slack webhook
+
+
+```
