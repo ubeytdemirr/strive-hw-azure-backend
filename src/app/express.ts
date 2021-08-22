@@ -1,32 +1,34 @@
-import cors from "../middlewares/cors/cors";
+import cors from '../middlewares/cors/cors';
 
-import services from "../services";
+import helmet from 'helmet';
 
-import errorHandler from "../middlewares/errorHandler";
+import services from '../services';
 
-import ApiError from "../classes/ApiError/ApiError";
+import errorHandler from '../middlewares/errorHandler';
 
-import { Response, Request } from "express";
+import ApiError from '../classes/ApiError/ApiError';
 
-import express from "express";
+import express, { Response, Request } from 'express';
 
-import morgan from "morgan";
+import morgan from 'morgan';
 
 const app = express();
 
-app.use(morgan("tiny"));
+app.use(morgan('tiny'));
+
+app.use(helmet());
 
 app.use(cors());
 
 app.use(express.json());
 
-app.use("/v1", services);
+app.use('/v1', services);
 
 app.use(errorHandler);
 
 app.use((req: Request, res: Response) => {
   if (!req.route && !res.headersSent) {
-    res.status(404).send(new ApiError(404, "This route is not found", true));
+    res.status(404).send(new ApiError(404, 'This route is not found', true));
   }
 });
 

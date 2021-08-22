@@ -1,23 +1,19 @@
 {
-  "extends": ["tslint:latest", "tslint-config-prettier","tslint-immutable","tslint-config-airbnb"],
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier",
+    "tslint-config-airbnb"
+  ],
+  "jsRules": {},
   "rules": {
-    "interface-name": [true, "never-prefix"],
-    "no-implicit-dependencies": [true, "dev"],
-    "no-var-keyword": true,
-    "no-parameter-reassignment": true,
-    "typedef": [true, "call-signature"],
-    "readonly-keyword": true,
-    "readonly-array": true,
-    "no-let": true,
-    "no-object-mutation": true,
-    "no-delete": true,
-    "no-method-signature": true,
-    "no-this": true,
-    "no-mixed-interface": true,
-    "no-expression-statement": [
-      true,
-      { "ignore-prefix": ["console.", "process.exit"] }
-    ],
-    "no-if-statement": true
-  }
+    "quotemark": [true, "single"],
+    "no-console": false,
+    "no-var-requires": false,
+    "variable-name": false,
+    "ter-indent": false,
+    "object-curly-spacing": false,
+    "brace-style": false
+  },
+  "rulesDirectory": []
 }

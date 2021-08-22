@@ -1,7 +1,4 @@
-export type feature =
-  // MANAGEMENT FEATURES
-  'USER_MANAGEMENT' | 'TEST';
-// USER FEATURES
+export type feature = 'USER_MANAGEMENT' | 'TEST';
 
 export type role = 'SUDO' | 'ADMIN' | 'USER';
 

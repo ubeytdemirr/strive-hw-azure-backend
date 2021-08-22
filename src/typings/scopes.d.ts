@@ -1,11 +1,11 @@
 export type feature =
   // MANAGEMENT FEATURES
-  "USER_MANAGEMENT" | "TEST";
+  'USER_MANAGEMENT' | 'TEST';
 // USER FEATURES
 
-export type role = "SUDO" | "ADMIN" | "USER";
+export type role = 'SUDO' | 'ADMIN' | 'USER';
 
-export type operation = "CREATE" | "READ" | "UPDATE" | "DELETE";
+export type operation = 'CREATE' | 'READ' | 'UPDATE' | 'DELETE';
 
 export interface IScope {
   name: feature;
@@ -13,8 +13,7 @@ export interface IScope {
 }
 export interface ISingleScope {
   name: feature;
-  operation:operation;
-  
+  operation: operation;
 }
 export type scopes = IScope[];
 export interface IRole {

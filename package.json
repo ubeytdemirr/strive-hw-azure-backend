@@ -14,21 +14,41 @@
     "start": "node -r dotenv/config  ./build/main dotenv_config_path=env/production.env",
     "upgrade": "ncu -u && npm i",
     "audit": "npm audit fix",
-    "maintain": "sudo npm-run-all upgrade audit fix:tslint",
-    "fix:tslint": "tslint --fix --project .",
+    "maintain": "sudo npm-run-all upgrade audit tslint prettier:write",
+    "tslint": "tslint --project tsconfig.json --fix",
+    "prettier:base": "prettier --parser typescript --single-quote",
+    "prettier:check": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx}\"",
+    "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\"",
     "watch": "tsc"
   },
   "engines": {
     "node": ">=14.17.0"
   },
-  "dependencies": {
+  "prettier":{
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
+    
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier:write"
+    }
+ },
+ "jest":{
+  "preset": "ts-jest",
+  "transform": {
+    "^.+\\.(ts|tsx)?$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest"
+  }
+},
+"dependencies": {
     "chalk": "^2.4.2",
     "console-stamp": "^3.0.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "helmet": "^4.6.0",
-    "tslint": "^6.1.3",
-    "tslint-immutable": "^6.0.1"
+    "helmet": "^4.6.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
@@ -38,6 +58,7 @@
     "@types/morgan": "^1.9.3",
     "babel-jest": "^27.0.6",
     "dotenv": "^10.0.0",
+    "husky": "^7.0.1",
     "jest": "^27.0.6",
     "js-test": "^0.0.1",
     "morgan": "^1.10.0",
@@ -47,6 +68,7 @@
     "prettier": "^2.3.2",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
+    "tslint": "^6.1.3",
     "tslint-config-airbnb": "^5.11.2",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.3.5"

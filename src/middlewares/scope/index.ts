@@ -3,8 +3,8 @@ import ApiError from '../../classes/ApiError/ApiError';
 import { IAuthRequest } from '../../typings/requests';
 import { ISingleScope } from '../../typings/scopes';
 
-export default function authorization(scope:ISingleScope) {
-  return function (req:IAuthRequest, _res:Response, next:NextFunction) {
+const authorization = (scope: ISingleScope) => {
+  return (req: IAuthRequest, _res: Response, next: NextFunction) => {
     if (req.user.scopes) {
       const hasScope = req.user.scopes.some(
         (s) => s.operations.includes(scope.operation) && s.name === scope.name,
@@ -17,10 +17,11 @@ export default function authorization(scope:ISingleScope) {
             false,
           ),
         );
-      }
-      else next();
+      } else next();
     } else {
       next(new ApiError(403, 'User does not have defined scope.', false));
     }
   };
-}
+};
+
+export default authorization;

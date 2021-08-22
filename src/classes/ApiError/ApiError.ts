@@ -1,4 +1,4 @@
-import chalk from "chalk";
+import chalk from 'chalk';
 
 class ApiError {
   readonly code: number;
@@ -6,8 +6,8 @@ class ApiError {
   readonly message: string;
   constructor(
     code: number = 500,
-    message: string = "An error occured",
-    isOperational: boolean = true
+    message: string = 'An error occured',
+    isOperational: boolean = true,
   ) {
     this.code = code;
     this.message = message;
