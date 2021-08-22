@@ -2,7 +2,7 @@
 
 <a href="https://github.com/ubeytdemirr/express-typescript-starter/generate">Click here or use template button to create new project </a>
 
-## Install dependencies
+## Install dependencies
 
 `npm install`
 
@@ -32,7 +32,7 @@ AWS_SECRET_ACCESS_KEY=AWS_SECRET_ACCESS_KEY
 
 `npm run dev`
 
-## Test the app`
+## Test the app
 
 `npm run test`
 
@@ -42,7 +42,7 @@ AWS_SECRET_ACCESS_KEY=AWS_SECRET_ACCESS_KEY
 
 ## Set repository secrets
 
-Go to <a href="/settings/secrets/actions">secrets</a> section and create following secrets
+Go to <a href="settings/secrets/actions">secrets</a> section and create following secrets
 
 ```
 
