@@ -17,9 +17,7 @@ NODE_ENV=development
 
 PORT=5000
 
-FRONTEND_PRODUCTION=http://localhost:3000
-
-FRONTEND_DEV=http://localhost:3000
+CORS_WHITE_LIST=http://localhost:3000,http://localhost:3001
 
 #----------------------- AWS ----------------------------#
 
