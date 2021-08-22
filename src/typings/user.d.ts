@@ -1,6 +1,6 @@
-import { Document } from "mongoose";
+ 
 import { IScope } from "./scopes";
-export interface IUser extends Document {
+export interface IUser  {
   email: string;
   password: string;
   scopes: IScope[];

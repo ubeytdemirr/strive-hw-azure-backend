@@ -11,6 +11,11 @@ export interface IScope {
   name: feature;
   operations: operation[];
 }
+export interface ISingleScope {
+  name: feature;
+  operation:operation;
+  
+}
 export type scopes = IScope[];
 export interface IRole {
   name: string;

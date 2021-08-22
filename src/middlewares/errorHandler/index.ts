@@ -1,5 +1,8 @@
-import ApiError from "@classes/error";
-const errorHandler = (error, _req, res, _next) => {
+import { NextFunction, Request, Response } from 'express';
+
+import ApiError from '../../classes/ApiError/ApiError';
+
+const errorHandler = (error:Error|ApiError, _req:Request, res:Response, _next:NextFunction) => {
   if (error && !res.headersSent) {
     const errorResponse =
       error instanceof ApiError

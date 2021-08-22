@@ -1,22 +1,26 @@
-import ApiError from "@classes/error";
+import { NextFunction, Response } from 'express';
+import ApiError from '../../classes/ApiError/ApiError';
+import { IAuthRequest } from '../../typings/requests';
+import { ISingleScope } from '../../typings/scopes';
 
-export default function authorization(scope) {
-  return function (req, _res, next) {
+export default function authorization(scope:ISingleScope) {
+  return function (req:IAuthRequest, _res:Response, next:NextFunction) {
     if (req.user.scopes) {
       const hasScope = req.user.scopes.some(
-        (s) => s.operations.includes(scope.operation) && s.name === scope.name
+        (s) => s.operations.includes(scope.operation) && s.name === scope.name,
       );
-      if (!hasScope)
+      if (!hasScope) {
         next(
           new ApiError(
             403,
             `Insufficient user role for ${scope.operation.toLowerCase()} ${scope.name.toLowerCase()}`,
-            false
-          )
+            false,
+          ),
         );
+      }
       else next();
     } else {
-      next(new ApiError(403, `User does not have defined scope.`, false));
+      next(new ApiError(403, 'User does not have defined scope.', false));
     }
   };
 }

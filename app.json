@@ -6,5 +6,5 @@
   "watch_options": {
     "followSymlinks": false
   },
-  "name": "yourapp"
+  "name": "api"
 }
