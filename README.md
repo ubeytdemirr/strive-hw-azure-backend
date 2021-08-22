@@ -40,6 +40,26 @@ AWS_SECRET_ACCESS_KEY=AWS_SECRET_ACCESS_KEY
 
 `npm run build`
 
+# Deploy to EC2 with Github Action
+
+- Create new ec2 server and download pem key, open with vscode copy content and save it as SSH_KEY to secrets
+
+- Prepare api deployment environment :
+  - install nodejs,npm,nginx,pm2 to your ec2 instance
+  - use proxy_pass to route http traffic to your apps port.
+  - integrate certbot to automate ssl certification
+  - add your ssh key (.ssh/id_rsa.pub) to your github account)
+  - copy scripts/deploy.sh to your ec2 server.
+  - clone your repository and test deploy script with `sh deploy.sh`
+
+When everyhing is ready your root folder should look like this:
+
+```
+
+your-project-name deploy.sh
+
+```
+
 ## Set repository secrets
 
 Go to settins/secrets section and create following secrets
